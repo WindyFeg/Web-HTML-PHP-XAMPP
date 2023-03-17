@@ -1,7 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
 
-<head>
 
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -11,21 +8,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <title>My website</title>
-</head>
 
-<body>
-    <header class="">
-        <img src="/img/hcmut-logo.png" alt="My Logo">
-        <h1>BK-Elearning</h1>
-        <nav>
-            <ul>
-                <li><a href="http://localhost/index.php?page=home">Home</a></li>
-                <li><a href="http://localhost/index.php?page=products">Products</a></li>
-                <li><a href="http://localhost/index.php?page=login">Login</a></li>
-                <li><a href="http://localhost/index.php?page=register">Register</a></li>
-            </ul>
-        </nav>
-    </header>
 
     <div class="body ">
 
@@ -61,35 +44,6 @@
                 </div>
             </div>
         </div>
-    </div>
-
-    <div class="footer">
-        <div class="contact footer__section">
-            <span>Liên hệ</span>
-            <ul class="contact-list">
-                <li class="contact-item">
-                    <i class="ti-location-pin"></i>Địa chỉ: 268 Lý
-                    Thường Kiệt, P.14, Q.10, TP.HCM
-                </li>
-                <li class="contact-item">
-                    <i class="ti-email"></i>Email:
-                    <a href="mailto: phong.tranwindyfeng@hcmut.edu.vn
-">phong.tranwindyfeng@hcmut.edu.vn
-                    </a>
-                </li>
-            </ul>
-        </div>
-        <div class="footer__section">
-            <span>
-                Powered by <i>Ky Phong <br /> </i>
-                <span>
-                    Ho Chi Minh
-                    University of Technology
-                    <img id="logo" src="/img/hcmut-logo.png" alt="" />
-                </span>
-            </span>
-        </div>
-    </div>
     </div>
 
     <script type="text/javascript">
@@ -132,6 +86,3 @@
 
         }
     </script>
-</body>
-
-</html>

@@ -1,22 +1,3 @@
-<?php
-    if (isset($_GET['page']) && $_GET['page'] == 'products') {
-        header("Location: http://localhost/products.php");
-    }
-    elseif (isset($_GET['page']) && $_GET['page'] == 'home') {
-        header("Location: http://localhost/home.php");
-    }
-    elseif (isset($_GET['page']) && $_GET['page'] == 'login') {
-        header("Location: http://localhost/login.php");
-    }
-    elseif (isset($_GET['page']) && $_GET['page'] == 'register') {
-        header("Location: http://localhost/register.php");
-    }
-    else{
-        header("Location: http://localhost/index.php");
-    }
-    
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -33,56 +14,44 @@
 </head>
 
 <body>
-    <header class="">
+    <header class="header">
         <img src="/img/hcmut-logo.png" alt="My Logo">
-        <h1>BK-Elearning</h1>
+        <h1>BK-Selling</h1>
         <nav>
             <ul>
                 <li><a href="http://localhost/index.php?page=home">Home</a></li>
                 <li><a href="http://localhost/index.php?page=products">Products</a></li>
                 <li><a href="http://localhost/index.php?page=login">Login</a></li>
-                <li><a href="http://localhost/index.php?page=register">Register</a></li>
+                <!-- //!disable the <a/> -->
+                <li><a style="pointer-events: none" 
+                href="http://localhost/index.php?page=register">Register</a></li>
             </ul>
         </nav>
     </header>
 
-    <div class="body ">
+    <?php
+    if (isset($_GET['page']) && $_GET['page'] == 'products') {
+        // header("Location: http://localhost/products.php");
+        include 'products.php';
+    }
+    elseif (isset($_GET['page']) && $_GET['page'] == 'home') {
+        // header("Location: http://localhost/home.php");
+        include 'home.php';
+    }
+    elseif (isset($_GET['page']) && $_GET['page'] == 'login') {
+        // header("Location: http://localhost/login.php");
+        include 'login.php';
+    }
+    elseif (isset($_GET['page']) && $_GET['page'] == 'register') {
+        // header("Location: http://localhost/register.php");
+        include 'register.php';
+    }
+    else{
+        include 'home.php';
+    }
+    ?>
 
-        <div class="background">
-            <div class="square">
-                <span class="title">
-                    QUESTION 3: sequence number
-                </span>
-
-                <div class="question3">
-                    <div class="res">
-                        <span id="sqnum">
-                        </span>
-                    </div>
-                    <button id="Show" class="btn col-sm" onclick="ShowNumber()">
-                        Show Number
-                    </button>
-
-                    <button id="maxBtn" class="btn col-sm" onclick="ShowMaxMin(0)">
-                        Max
-                    </button>
-
-                    <button id="minBtn" class="btn" onclick="ShowMaxMin(1)">
-                        Min
-                    </button>
-                    <button id="sortMaxBtn" class="btn" onclick="SortMinMax(0)">
-                        Sort Max
-                    </button>
-                    <button id="sortMinBtn" class="btn" onclick="SortMinMax()">
-                        Sort min
-                    </button>
-
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="footer">
+<div class="footer">
         <div class="contact footer__section">
             <span>Liên hệ</span>
             <ul class="contact-list">
@@ -92,8 +61,7 @@
                 </li>
                 <li class="contact-item">
                     <i class="ti-email"></i>Email:
-                    <a href="mailto: phong.tranwindyfeng@hcmut.edu.vn
-">phong.tranwindyfeng@hcmut.edu.vn
+                    <a href="mailto: phong.tranwindyfeng@hcmut.edu.vn">phong.tranwindyfeng@hcmut.edu.vn
                     </a>
                 </li>
             </ul>
@@ -110,47 +78,6 @@
         </div>
     </div>
     </div>
-
-    <script type="text/javascript">
-        function ShowNumber() {
-            var sequence = [5, 25, 13, 8, 45, 6, 11]
-            document.getElementById("sqnum").innerHTML = sequence
-        }
-
-        function ShowMaxMin(id) {
-            var sequence = [5, 25, 13, 8, 45, 6, 11]
-            var temp = sequence[0];
-            sequence.forEach(e => {
-                if (temp < e && id == 0) {
-                    temp = e;
-                }
-                else if (temp > e && id == 1) {
-                    temp = e;
-                }
-            })
-            document.getElementById("sqnum").innerHTML = temp
-        }
-
-        function SortMinMax(typ) {
-            var sequence = [5, 25, 13, 8, 45, 6, 11]
-            for (var i = 0; i < sequence.length; i++) {
-                for (var j = i + 1; j < sequence.length; j++) {
-                    if (sequence[i] > sequence[j]) {
-                        var temp = sequence[i];
-                        sequence[i] = sequence[j];
-                        sequence[j] = temp;
-                    }
-                }
-            }
-
-            if (typ == 1) {
-                sequence = sequence.reverse()
-            }
-
-            document.getElementById("sqnum").innerHTML = sequence
-
-        }
-    </script>
 </body>
 
 </html>
