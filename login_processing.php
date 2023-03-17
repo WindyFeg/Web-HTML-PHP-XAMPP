@@ -4,6 +4,10 @@ session_start();
 // Get the email and password from the form data
 $username = $_POST['username'];
 $password = $_POST['password'];
+
+if (isset($username)){
+    echo "It works";
+}
 // Look up the user in the database
 $db = new mysqli('localhost', 'root', '', 'OnlineStore');
 $query = "SELECT * FROM users WHERE username='$username'";

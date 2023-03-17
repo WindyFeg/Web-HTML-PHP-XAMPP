@@ -1,17 +1,23 @@
-
 <body>
 <h1>Login</h1>
-<form method="post" action="login_processing.php">
-    <label for="username">Username:</label>
-    <input type="text" id="username" name="username" required><br><br>
-    <label for="password">Password:</label>
-    <input type="password" id="password" name="password" required><br><br>
-    <input type="submit" value="Login">
+<form method="post" action="test.php">
+<label for="username">Username:</label>
+<input type="text" id="username" name="username" required><br><br>
+<label for="password">Password:</label>
+<input type="password" id="password" name="password" required><br><br>
+<input type="username" id="alo" name="alo" required><br><br>
+<input type="submit" value="submit">
+    <?php
+    echo "check if session error is set";
+    if (isset($_SESSION['error'])) {
+        echo $_SESSION['error'];
+        unset($_SESSION['error']);
+    }
+    ?>
 </form>
-</body>
-</html>
-
 
 <a href="http://localhost/index.php?page=home">
 <button>Go to Home</button>
 </a>
+</body>
+
