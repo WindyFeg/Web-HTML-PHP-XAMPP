@@ -13,7 +13,7 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <title>My website</title>
 </head>
-<header class="header">
+<header>
     <img src="/img/hcmut-logo.png" alt="My Logo">
     <h1>BK-Selling</h1>
     <nav>
@@ -21,8 +21,10 @@
             <li><a href="http://localhost/index.php?page=home">Home</a></li>
             <li><a href='http://localhost/index.php?page=products'>Products</a></li>
             <?php
-            if (isset($_SESSION['userID'])) {
+            if (isset($_SESSION['username'])) {
                 echo "<li><a href='http://localhost/index.php?page=logout'>Logout</a></li>";
+                echo "<li> Username: ". $_SESSION['username'] ."</li>";
+                echo "<li> Userlevel: ". $_SESSION['userlevel'] ."</li>";
             }
             else{
                 echo "<li><a href='http://localhost/index.php?page=login'>Login</a></li>";
@@ -33,3 +35,4 @@
         </ul>
     </nav>
 </header>
+

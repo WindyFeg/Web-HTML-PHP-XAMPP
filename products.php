@@ -23,7 +23,7 @@
       echo "<h2>" . $row["pName"] . "</h2>";
       echo "<p>" . $row["pDescription"] . "</p>";
       echo "<p>Price: $" . $row["pPrice"] . "</p>";
-      echo "<img src='" . $row["pImage"] . "'>";
+      // echo "<img src='" . $row["pImage"] . "'>";
       echo "</div>";
     }
   } else {

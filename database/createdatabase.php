@@ -41,7 +41,9 @@ if ($conn->query($sql) === TRUE) {
 $sql = "CREATE TABLE users (
   userID INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
   username VARCHAR(30) NOT NULL,
-  password VARCHAR(255) NOT NULL
+  password VARCHAR(255) NOT NULL,
+  userlevel INT(2) NOT NULL
+  
 )";
 
 if ($conn->query($sql) === TRUE) {
@@ -73,10 +75,15 @@ if ($conn->query($sql) === TRUE) {
 // Insert new users with hashed passwords
 $password1 = password_hash("password1", PASSWORD_DEFAULT);
 $password2 = password_hash("password2", PASSWORD_DEFAULT);
+$password3 = password_hash("phong0123", PASSWORD_DEFAULT);
 
-$sql = "INSERT INTO users (username, password) VALUES
-  ('user1', '$password1'),
-  ('user2', '$password2')";
+
+
+$sql = "INSERT INTO users (username, password, userlevel) VALUES
+  ('user1', '$password1', 2),
+  ('user2', '$password2', 2),
+  ('phong', '$password3', 1)
+  ";
 
 if ($conn->query($sql) === TRUE) {
   echo "New users inserted successfully<br>";

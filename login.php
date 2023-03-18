@@ -14,7 +14,7 @@
                     echo "<p>Fill in all fields!</p>";
                 }
                 else if ($_GET['error'] == "wronglogin"){
-                    echo "<p>Incorrect login information!</p>";
+                    echo "<p>Incorrect username or password!</p>";
                 }
                 elseif ($_GET['error'] == "loginFailed"){
                     echo "<p>Something went wrong!</p>";

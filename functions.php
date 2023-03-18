@@ -60,7 +60,7 @@ function loginUser($conn, $username, $password){
 
     //$ verify password
     $pwdHashed = $usernameExists["password"];
-    $checkPwd = pass_check($password, $pwdHashed);
+    $checkPwd = password_verify($password, $pwdHashed);
 
     if ($checkPwd === false) {
         header("location: ../index.php?page=login&error=wronglogin");
@@ -69,7 +69,8 @@ function loginUser($conn, $username, $password){
     else if ($checkPwd === true) {
         //$ Start session to store data
         session_start();
-        $_SESSION["userID"] = $usernameExists["username"];
+        $_SESSION["username"] = $usernameExists["username"];
+        $_SESSION["userlevel"] = $usernameExists["userlevel"];
         header("location: ../index.php?page=home");
         exit();
     }
