@@ -1,3 +1,7 @@
+<?php
+    session_start();
+?>
+
 <head>
 
     <meta charset="UTF-8">
@@ -15,11 +19,17 @@
     <nav>
         <ul>
             <li><a href="http://localhost/index.php?page=home">Home</a></li>
-            <li><a href="http://localhost/index.php?page=products">Products</a></li>
-            <li><a href="http://localhost/index.php?page=login">Login</a></li>
-            <!-- //!disable the <a/> -->
-            <li><a style="pointer-events: none" 
-            href="http://localhost/index.php?page=register">Register</a></li>
+            <li><a href='http://localhost/index.php?page=products'>Products</a></li>
+            <?php
+            if (isset($_SESSION['userID'])) {
+                echo "<li><a href='http://localhost/index.php?page=logout'>Logout</a></li>";
+            }
+            else{
+                echo "<li><a href='http://localhost/index.php?page=login'>Login</a></li>";
+                echo "<li><a style='pointer-events: none' href='http://localhost/index.php?page=register'>Register</a></li>";
+            }
+            ?>
+        
         </ul>
     </nav>
 </header>
