@@ -1,6 +1,4 @@
-
 <div>
-
     <div class="background">
         <div class="square">
             <span class="title">

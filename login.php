@@ -1,14 +1,31 @@
 <body>
-    <h1>Login</h1>
-    <div>
+    <div class="centre">
+        <img class="login_pageName" src="/assets/img/page_name.png"></img>
+    </div>
+    <h1 id="windyfeng--background">
+        WINDY
+        FENG
+    </h1>
+    <h1 id="windyfeng">
+        WINDY
+        FENG
+    </h1>
+    <div id="half_screen">.
+    </div>
+    <div class="login_container">
+        <form class="login_form" name="loginForm" method="post" action="login_processing.php"
+            onsubmit="return CheckValidity()">
+            <div class="login_field">
+                <label class="login_label">Username:</label>
+                <input class="login_input" type="text" id="username" name="username" placeholder="username"
+                    autocomplete="on" min="4" max="20" required>
+            </div>
+            <div class="login_field">
+                <label class="login_label">Password:</label>
+                <input class="login_input" type="password" name="password" placeholder="password" required>
+            </div>
 
-        <form name="loginForm" method="post" action="login_processing.php" onsubmit="return CheckValidity()">
-            <label>Username</label>
-            <input type="text" id="username" name="username" placeholder="username" autocomplete="on" min="4" max="20"
-                required>
-            <label>Password</label>
-            <input type="password" name="password" placeholder="password" required>
-            <button type="submit" name="submit">Login</button>
+            <button class="login_btn" type="submit" name="submit">></button>
         </form>
         <?php
         if (isset($_GET['error'])) {
