@@ -2,20 +2,21 @@ html {
     font-size: 62.5%;
 }
 
-header {
+.header {
     position: fixed;
     background-color: rgb(232, 237, 245);
     padding: 20px;
     top: 0;
     z-index: 1;
+    width: 100%;
 }
 
-header img {
+.header img {
     width: 50px;
     height: 50px;
 }
 
-header h1 {
+.header h1 {
     font-size: 36px;
     color: rgb(102, 102, 102);
     margin: 0;
@@ -25,7 +26,7 @@ header h1 {
 }
 
 /* Style the navigation menu */
-header nav ul {
+.header nav ul {
     list-style: none;
     margin: 0;
     padding: 0;
@@ -33,11 +34,11 @@ header nav ul {
     vertical-align: top;
 }
 
-header nav ul li {
+.header nav ul li {
     display: inline-block;
 }
 
-header nav ul li a {
+.header nav ul li a {
     display: block;
     padding: 10px;
     color: rgb(102, 102, 102);
@@ -45,9 +46,15 @@ header nav ul li a {
     text-decoration: none;
 }
 
-header nav ul li a:hover {
+.header nav ul li a:hover {
     background-color: #555;
     color: white
+}
+
+
+
+.body {
+    padding: 150px;
 }
 
 .background {
@@ -173,4 +180,11 @@ header nav ul li a:hover {
     width: 2rem;
     position: relative;
     top: 0.5rem;
+}
+
+#error {
+    color: red;
+    background-color: #e8edf5;
+    display: inline;
+    padding: 5px;
 }

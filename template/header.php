@@ -13,8 +13,8 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <title>My website</title>
 </head>
-<header>
-    <img src="/img/hcmut-logo.png" alt="My Logo">
+<div class="header">
+    <img src="assets/img/hcmut-logo.png" alt="My Logo">
     <h1>BK-Selling</h1>
     <nav>
         <ul>
@@ -34,5 +34,5 @@
         
         </ul>
     </nav>
-</header>
+        </div>
 

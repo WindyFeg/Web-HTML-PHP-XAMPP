@@ -1,13 +1,14 @@
 <?php
 
-function usernameExists($conn, $username){
+function usernameExists($conn, $username)
+{
     $sql = "SELECT * FROM users WHERE username = ?;";
     $stmt = mysqli_stmt_init($conn);
 
     if (!mysqli_stmt_prepare($stmt, $sql)) {
         //! handle loginFailed
         header("location: ../login.php?error=loginFailed");
-        exit();  
+        exit();
     }
 
     //$S prevent SQL injection
@@ -20,41 +21,45 @@ function usernameExists($conn, $username){
     //$ return data in array by row
     if ($row = mysqli_fetch_assoc($resultData)) {
         return $row;
-    }
-    else{
+    } else {
         $result = false;
         return $result;
     }
 }
 
-function pass_check($password, $passwordRepeat){
-    $result;
+function pass_check($password, $passwordRepeat)
+{
     if ($password === $passwordRepeat) {
-        $result = true;
+        return true;
+    } else {
+        return false;
     }
-    else{
-        $result = false;
-    }
-    return $result;
 }
 
-function emptyInputLogin($username, $password){
-    $result;
+function emptyInputLogin($username, $password)
+{
     if (empty($username) || empty($password)) {
-        $result = true;
+        return true;
+    } else {
+        return false;
     }
-    else{
-        $result = false;
-    }
-    return $result;
 }
 
-function loginUser($conn, $username, $password){
+function serverCheckValidity($value)
+{
+    $value = trim($value);
+    $value = stripslashes($value);
+    $value = htmlspecialchars($value);
+    return $value;
+}
+
+function loginUser($conn, $username, $password)
+{
     //$ Data if exits else false
     $usernameExists = usernameExists($conn, $username);
 
     if ($usernameExists === false) {
-        header("location: ../index.php?page=login&error=wronglogin");
+        header("location: ../index.php?page=login&error=$username");
         exit();
     }
 
@@ -63,10 +68,9 @@ function loginUser($conn, $username, $password){
     $checkPwd = password_verify($password, $pwdHashed);
 
     if ($checkPwd === false) {
-        header("location: ../index.php?page=login&error=wronglogin");
+        header("location: ../index.php?page=login&error=$username");
         exit();
-    }
-    else if ($checkPwd === true) {
+    } else if ($checkPwd === true) {
         //$ Start session to store data
         session_start();
         $_SESSION["username"] = $usernameExists["username"];

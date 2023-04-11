@@ -1,5 +1,5 @@
 
-<div class="body ">
+<div>
 
     <div class="background">
         <div class="square">

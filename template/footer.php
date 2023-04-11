@@ -19,7 +19,7 @@
             <span>
                 Ho Chi Minh
                 University of Technology
-                <img id="logo" src="/img/hcmut-logo.png" alt="" />
+                <img id="logo" src="/assets/img/hcmut-logo.png" alt="" />
             </span>
         </span>
     </div>
