@@ -1,4 +1,31 @@
 <div>
+    <div class="centre">
+        <img class="login_pageName" src="/assets/img/page_name.png"></img>
+    </div>
+    <h1 id="windyfeng--background">
+        WINDY
+        FENG
+    </h1>
+    <h1 id="windyfeng">
+        WINDY
+        FENG
+    </h1>
+    <div id="half_screen">.
+    </div>
+
+    <div class="wrapper">
+        <div class="collapsible">
+            <input type="checkbox" id="collapsible_head"></input>
+            <label for="collapsible_head">AJAX - Access file story.txt</label>
+            <div class="collapsible_text">
+                <h2>The Hindu god Ganesha</h2>
+                <button onclick={loadStory()} class="btn btn-border-pop">Load Story</button>
+
+                <p id="collapsible_p" class="scrollable"></p>
+            </div>
+        </div>
+    </div>
+
     <div class="background">
         <div class="square">
             <span class="title">
@@ -31,9 +58,31 @@
             </div>
         </div>
     </div>
+
+
+
 </div>
 
 <script type="text/javascript">
+
+    function loadStory() {
+        xhttp = new XMLHttpRequest();
+        xhttp.onload = function () {
+            document.getElementById("collapsible_p").innerHTML = this.responseText;
+        }
+        xhttp.open("GET", "story.txt", true);
+        xhttp.send();
+    }
+
+    function toggleDiv(id) {
+        var x = document.getElementsByClassName("background");
+        if (x.style.display === "none") {
+            x.style.display = "block";
+        } else {
+            x.style.display = "none";
+        }
+    }
+
     function ShowNumber() {
         var sequence = [5, 25, 13, 8, 45, 6, 11]
         document.getElementById("sqnum").innerHTML = sequence
