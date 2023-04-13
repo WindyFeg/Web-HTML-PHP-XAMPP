@@ -382,6 +382,14 @@ html {
     text-align: center
 }
 
+.search_container {
+    display: inline-block;
+    align-items: center;
+    justify-content: center;
+    margin-top: 100px;
+    max-width: 600px;
+}
+
 #half_screen {
     display: inline-flex;
     height: 300px;
@@ -391,7 +399,7 @@ html {
 #windyfeng {
     position: absolute;
     width: 438px;
-    height: 340px;
+    height: 300px;
     /* left: 139px;
     top: 324px; */
 
@@ -406,10 +414,19 @@ html {
 
 }
 
+#search_box {
+    width: 400px;
+}
+
+#search_hint {
+    max-width: 400px;
+    background-color: white;
+}
+
 #windyfeng--background {
     position: absolute;
     width: 442px;
-    height: 340px;
+    height: 300px;
     /* left: 135px;
     top: 324px; */
 

@@ -3,21 +3,24 @@
   <div class="centre">
     <img class="login_pageName" src="/assets/img/page_name.png"></img>
   </div>
-  <!-- <h1 id="windyfeng--background">
-    PRODUCTS
+  <h1 id="windyfeng--background">
+    PRO
+    DUCT
   </h1>
   <h1 id="windyfeng">
-    PRODUCTS
-  </h1> -->
+    PRO
+    DUCT
+  </h1>
   <div id="half_screen">.
   </div>
-  <div>
-    <input type="text" id="searchBox" placeholder="Search... " onkeyup="searchProducts(this.value)">
+  <div class="search_container">
+    <input type="text" id="search_box" placeholder="Search... " onkeyup="searchProducts(this.value)">
     <button class="btn btn-light-color btn-border-pop " id="searchBtn">Search</button>
+    </input>
     <div id="search_hint"></div>
   </div>
   <div id="product_container">
-    <button class="btn btn-light-color btn-border-pop" onclick={getProducts()}>Get products</button>
+    <button class="btn btn-light-color btn-border-pop" onclick={getProducts()}>Show all products</button>
   </div>
 
   <script>
@@ -40,7 +43,14 @@
         var xmlhttp = new XMLHttpRequest();
         xmlhttp.onreadystatechange = function () {
           if (this.readyState == 4 && this.status == 200) {
-            document.getElementById("search_hint").innerHTML = this.responseText;
+            var xmlResponse = this.responseXML;
+            var products = xmlResponse.getElementsByTagName("product");
+            var listName = "";
+            for (var i = 0; i < products.length; i++) {
+              var pName = products[i].getElementsByTagName("name")[0].textContent;
+              listName += "\n" + pName;
+            }
+            document.getElementById("search_hint").innerHTML = listName;
           }
         };
         xmlhttp.open("GET", "search_products.php?q=" + str, true);
