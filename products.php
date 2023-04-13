@@ -1,35 +1,53 @@
 <!-- products.php -->
-<?php
-// Connect to the database
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "OnlineStore";
-$conn = new mysqli($servername, $username, $password, $dbname);
+<div>
+  <div class="centre">
+    <img class="login_pageName" src="/assets/img/page_name.png"></img>
+  </div>
+  <!-- <h1 id="windyfeng--background">
+    PRODUCTS
+  </h1>
+  <h1 id="windyfeng">
+    PRODUCTS
+  </h1> -->
+  <div id="half_screen">.
+  </div>
+  <div>
+    <input type="text" id="searchBox" placeholder="Search... " onkeyup="searchProducts(this.value)">
+    <button class="btn btn-light-color btn-border-pop " id="searchBtn">Search</button>
+    <div id="search_hint"></div>
+  </div>
+  <div id="product_container">
+    <button class="btn btn-light-color btn-border-pop" onclick={getProducts()}>Get products</button>
+  </div>
 
-// Check connection
-if ($conn->connect_error) {
-  die("Connection failed: " . $conn->connect_error);
-}
+  <script>
+    function getProducts() {
+      var xhttp = new XMLHttpRequest();
+      xhttp.onreadystatechange = function () {
+        if (this.readyState == 4 && this.status == 200) {
+          document.getElementById("product_container").innerHTML = this.responseText;
+        }
+      };
+      xhttp.open("GET", "products_processing.php", true);
+      xhttp.send();
+    }
 
-// Fetch products from the database
-$sql = "SELECT * FROM products";
-$result = $conn->query($sql);
+    function searchProducts(str) {
+      if (str.length == 0) {
+        document.getElementById("search_hint").innerHTML = "";
+        return;
+      } else {
+        var xmlhttp = new XMLHttpRequest();
+        xmlhttp.onreadystatechange = function () {
+          if (this.readyState == 4 && this.status == 200) {
+            document.getElementById("search_hint").innerHTML = this.responseText;
+          }
+        };
+        xmlhttp.open("GET", "search_products.php?q=" + str, true);
+        xmlhttp.send();
+      }
+    }
 
-if ($result->num_rows > 0) {
-  // Output each product as an HTML element
+  </script>
 
-  while ($row = $result->fetch_assoc()) {
-    echo "<div>";
-    echo "<h2>" . $row["pName"] . "</h2>";
-    echo "<p>" . $row["pDescription"] . "</p>";
-    echo "<p>Price: $" . $row["pPrice"] . "</p>";
-    echo "<img src='" . $row["pImage"] . "'>";
-    echo "</div>";
-  }
-} else {
-  echo "No products found.";
-}
-
-$conn->close();
-?>
+</div>

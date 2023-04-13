@@ -195,6 +195,10 @@ html {
     --accent-color: #0AF;
 }
 
+.btn-light-color {
+    background-color: #fbeccd;
+}
+
 *,
 *::before,
 *::after {
