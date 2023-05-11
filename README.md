@@ -11,10 +11,9 @@ Find this and change to your dir\n
 DocumentRoot "..\xampp\htdocs\Lab"
 <Directory "..\xampp\htdocs\Lab">\n
 ## UI
-[Figma](https://www.figma.com/proto/uaW4UAdOAkX5sk4Kb79hkC/Web-Lab?node-id=1-3)\n
+[Figma](https://www.figma.com/proto/uaW4UAdOAkX5sk4Kb79hkC/Web-Lab?node-id=1-3)
 
-[Screenshot](/img/sc1.png)
-[Screenshot](/img/sc2.png)
-[Screenshot](/img/sc3.png)
-[Screenshot](/img/sc4.png)
-[Screenshot](/img/sc5.png)
+![Screenshot](img/sc1.png "Screenshot")
+![Screenshot](img/sc2.png)
+![Screenshot](img/sc3.png)
+![Screenshot](img/sc4.png)
