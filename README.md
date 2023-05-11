@@ -9,6 +9,12 @@ Add This repo 'Lab' into directory\n
 2. On XAMPP Control Panel change config of Apache (httpd.conf)
 Find this and change to your dir\n  
 DocumentRoot "..\xampp\htdocs\Lab"
-<Directory "..\xampp\htdocs\Lab">
+<Directory "..\xampp\htdocs\Lab">\n
 ## UI
 [Figma](https://www.figma.com/proto/uaW4UAdOAkX5sk4Kb79hkC/Web-Lab?node-id=1-3)\n
+
+[Screenshot](/img/sc1.png)
+[Screenshot](/img/sc2.png)
+[Screenshot](/img/sc3.png)
+[Screenshot](/img/sc4.png)
+[Screenshot](/img/sc5.png)
