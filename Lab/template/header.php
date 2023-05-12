@@ -17,18 +17,18 @@ session_start();
     </div>
     <div class="header_navigation">
         <ul>
-            <li><a href="http://localhost/index.php?page=home">HOME</a></li>
-            <li><a href='http://localhost/index.php?page=products'>PRODUCTS</a></li>
+            <li><a href="http://localhost/index.php?page=home" class="hoverFill">HOME</a></li>
+            <li><a href='http://localhost/index.php?page=products' class="hoverFill">PRODUCTS</a></li>
             <li></li>
             <li></li>
             <?php
             if (isset($_SESSION['username'])) {
-                echo "<li><a href='http://localhost/index.php?page=logout'>Logout</a></li>";
-                echo "<li> Username: " . $_SESSION['username'] . "</li>";
-                echo "<li> Userlevel: " . $_SESSION['userlevel'] . "</li>";
+                echo "<li><a href='http://localhost/index.php?page=logout' class='hoverFill'>Logout</a></li>";
+                echo "<li><a class='hoverFill'> Username: " . $_SESSION['username'] . "</a></li>";
+                // echo "<li><a> Userlevel: " . $_SESSION['userlevel'] . "</a></li>";
             } else {
-                echo "<li><a href='http://localhost/index.php?page=login'>LOGIN</a></li>";
-                echo "<li><a style='pointer-events: none' href='http://localhost/index.php?page=register'>REGISTER</a></li>";
+                echo "<li><a href='http://localhost/index.php?page=login' class='hoverFill'>LOGIN</a></li>";
+                echo "<li><a class='hoverFill' style='pointer-events: none' href='http://localhost/index.php?page=register'>REGISTER</a></li>";
             }
             ?>
 

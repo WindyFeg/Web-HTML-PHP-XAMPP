@@ -58,6 +58,8 @@ function loginUser($conn, $username, $password)
     //$ Data if exits else false
     $usernameExists = usernameExists($conn, $username);
 
+    echo $usernameExists;
+
     if ($usernameExists === false) {
         header("location: ../index.php?page=login&error=$username");
         exit();
@@ -68,14 +70,14 @@ function loginUser($conn, $username, $password)
     $checkPwd = password_verify($password, $pwdHashed);
 
     if ($checkPwd === false) {
-        header("location: ../index.php?page=login&error=$username");
+        header("location: ../../index.php?page=login&error=$username");
         exit();
     } else if ($checkPwd === true) {
         //$ Start session to store data
         session_start();
         $_SESSION["username"] = $usernameExists["username"];
         $_SESSION["userlevel"] = $usernameExists["userlevel"];
-        header("location: ../index.php?page=home");
+        header("location: ../../index.php?page=home");
         exit();
     }
 }

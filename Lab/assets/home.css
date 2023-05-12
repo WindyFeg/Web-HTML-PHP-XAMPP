@@ -22,7 +22,6 @@ html {
 }
 
 .header_navigation ul li a {
-    color: #F1ECD8;
     text-decoration: none;
     padding: 10px;
     font-family: 'Righteous', cursive;
@@ -443,6 +442,19 @@ html {
     border-radius: 5px;
     text-decoration: none;
 
+}
+
+.hoverFill {
+    color: #0000;
+    background:
+        linear-gradient(90deg, #818181 50%, #F1ECD8 0) var(--_p, 100%)/200% no-repeat;
+    -webkit-background-clip: text;
+    background-clip: text;
+    transition: .3s;
+}
+
+.hoverFill:hover {
+    --_p: 0%;
 }
 
 #half_screen {
